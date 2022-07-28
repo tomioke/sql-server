@@ -22,14 +22,10 @@ SELECT list_data FROM nama_tabel WHERE id > 1 ORDER BY index_data DESC;
 ## penggunaan grub by untuk kedepannya dalam mengelola data yang besar
 
 > SELECT 
-
->  id_barang, 
-
->  nama, 
-  
->  jumlah, 
-  
->  harga
+  id_barang, 
+  nama, 
+  jumlah, 
+  harga
   
 > FROM tb_barang
 
