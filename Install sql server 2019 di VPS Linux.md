@@ -1,5 +1,7 @@
 # Setup SQL Server 2019 free from VPS
 
+[![Discord][discord-image]][discord-url]
+
 ## Minimum System Requipments:
 - Ubuntu 20.04
 - CPU 1 Core
