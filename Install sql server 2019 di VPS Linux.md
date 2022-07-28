@@ -35,7 +35,9 @@ sudo /opt/mssql/bin/mssql-conf setup
 ```
 
  > Select 3 for Express, free edition
+ >
  > yes
+ 
  > Enter password, example ManiakSQL@123
 
  ## Cek status sql server
