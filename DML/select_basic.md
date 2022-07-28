@@ -24,6 +24,7 @@ SELECT list_data FROM nama_tabel WHERE id > 1 ORDER BY index_data DESC;
 > SELECT 
 
 >  id_barang, 
+
 >  nama, 
   
 >  jumlah, 
