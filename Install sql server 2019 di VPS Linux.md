@@ -68,3 +68,41 @@ sudo ufw enable
 ```
 > type y
 
+## Install command tools
+
+```bash
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+sudo apt update 
+sudo apt install -y mssql-tools unixodbc-dev
+```
+
+## Add tools folder to PATH environment variable in a bash shell.
+
+```bash
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+source ~/.bashrc
+```
+## Connect to your server
+
+```bash
+sqlcmd -S localhost -U sa -P 'ManiakSQL@123'
+```
+
+# Optionals
+## Change password 
+ To change the “sa” password, you have to first Stop SQL Server service which is running on the Linux machine. Let’s stop the SQL Server and verify the status of SQL Server.
+
+## Reset the “sa” password by key new strong password now.
+ 
+ ```bash
+ /opt/mssql/bin/mssql-conf set-sa-password
+```
+
+## Start and verify the status of SQL Server Service
+
+ ```bash
+sudo systemctl start mssql-server
+sudo systemctl status mssql-server
+```
