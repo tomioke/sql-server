@@ -1,7 +1,7 @@
 ## Ini query select data seluruh barang
 
 ```
-SELECT list_data FROM nama_tabel;
+SELECT _list_data_ FROM _nama_tabel_;
 ```
 
 ## select semua data dengan id barang = 2
