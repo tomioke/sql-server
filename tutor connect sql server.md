@@ -15,7 +15,8 @@ c.	Navicat Premium 15
 ![my_db2](https://user-images.githubusercontent.com/40717020/181412946-e86f76b5-ed46-49aa-ac6f-783c4146c9bd.png)
 
 ## Isi konfigurasi
-Masukan semua konfigurasi seperti connection name, isi sesuai nama web, lalu   host, username, autentikasi sql server dan password. Jangan lupa untuk mengetesnya dengan klik test connection.
+Masukan semua konfigurasi seperti connection name, isi sesuai nama web, lalu   host, username, autentikasi sql server dan password. 
+Jangan lupa untuk mengetesnya dengan klik test connection.
 ![my_db3](https://user-images.githubusercontent.com/40717020/181412965-f91fce79-b270-4a38-a318-310ad184ff56.png)
 
 ### Note :  Untuk versi express pada SQL Server default username adalah ‘sa’.
