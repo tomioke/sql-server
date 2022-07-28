@@ -1,6 +1,6 @@
 ## Ini query select data seluruh barang
 
-bash```
+```
 SELECT list_data FROM nama_tabel;
 ```
 
