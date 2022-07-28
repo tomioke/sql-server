@@ -23,17 +23,17 @@ SELECT list_data FROM nama_tabel WHERE id > 1 ORDER BY index_data DESC;
 
 > SELECT 
 
-  id_barang, 
-  nama, 
+>  id_barang, 
+>  nama, 
   
-  jumlah, 
+>  jumlah, 
   
-  harga
+>  harga
   
-FROM tb_barang
+> FROM tb_barang
 
-WHERE id_barang > 1
+> WHERE id_barang > 1
 
-GROUP BY id_barang, nama, jumlah, harga 
+> GROUP BY id_barang, nama, jumlah, harga 
 
-ORDER BY harga DESC;
+> ORDER BY harga DESC;
