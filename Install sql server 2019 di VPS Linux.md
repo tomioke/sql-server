@@ -1,7 +1,5 @@
 # Setup SQL Server 2019 free from VPS
 
-[![Discord][discord-image]][discord-url]
-
 ## Minimum System Requipments:
 - Ubuntu 20.04
 - CPU 1 Core
@@ -31,6 +29,40 @@ sudo apt-get install -y mssql-server
  As a reminder, the following SQL Server editions are freely licensed: Evaluation, Developer, and Express.
  
  ## Settings editions packages
+ 
 ```bash
 sudo /opt/mssql/bin/mssql-conf setup
 ```
+
+ > Select 3 for Express, free edition
+ > yes
+ > Enter password, example ManiakSQL@123
+
+ ## Cek status sql server
+ 
+ ```bash
+systemctl status mssql-server --no-pager
+```
+
+## Check the listening port for MSSQL server
+
+ ```bash
+sudo apt install net-tools
+```
+
+## Cek port number
+
+```bash
+sudo netstat -tnlp | grep sqlservr
+```
+
+## Allow firewall
+
+```bash
+sudo ufw allow 22
+sudo ufw allow 1433
+sudo ufw allow 1434
+sudo ufw enable 
+```
+> type y
+
