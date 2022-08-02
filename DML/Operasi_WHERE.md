@@ -1,0 +1,93 @@
+-- Penggunaan klausa where dengan " = ".
+
+```
+SELECT * 
+
+FROM tb_barang 
+
+ORDER BY id_barang
+
+OFFSET 0 ROWS
+
+FETCH NEXT 5 ROWS ONLY;
+```
+
+```
+SELECT * 
+
+FROM tb_barang 
+
+WHERE jumlah = 15;
+```
+
+-- Dengan operator >
+
+```
+SELECT * 
+
+FROM tb_barang 
+
+WHERE harga > 35000;
+```
+
+-- Dengan operator AND
+
+```
+SELECT * 
+
+FROM tb_barang 
+
+WHERE jumlah < 10 AND diskon >= 10000;
+```
+
+-- Menggunakan operator BETWEEN
+
+```
+SELECT * 
+
+FROM tb_barang 
+
+WHERE diskon BETWEEN 1000 AND 10000;
+```
+
+-- Penggunaan operator IN untuk mencari data tertentu berupa angka.
+
+```
+SELECT * 
+
+FROM tb_barang 
+
+WHERE diskon IN(10000,15000);
+```
+
+```
+SELECT 
+	nama, 
+  
+	jumlah, 
+  
+	harga, 
+  
+	diskon
+  
+FROM tb_barang 
+
+WHERE diskon IN(10000,15000);
+```
+
+-- Penggunaan operator LIKE untuk cari data berupa string.
+
+```
+SELECT 
+	nama, 
+  
+	jumlah, 
+  
+	harga, 
+  
+	diskon
+  
+FROM tb_barang 
+
+WHERE nama LIKE '%in%';
+```
