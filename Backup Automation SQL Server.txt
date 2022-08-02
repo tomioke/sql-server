@@ -1,0 +1,66 @@
+Referensi:
+https://www.adminschoice.com/crontab-quick-reference
+https://blog.sqlbak.com/how-to-backup-and-restore-sql-server-on-linux
+
+
+Install email notification for backup
+$ sudo apt-get install postfix mailutils
+
+ > Select No Configuration
+
+Create directory for save backups:
+$ sudo mkdir -p /backups/sql-server
+$ cd /backups/sql-server
+
+Assign the mssql user as the owner of this directory for save backups:
+$ sudo chown mssql /backups/sql-server
+
+Create directory for running the scripts:
+$ sudo mkdir -p /script
+
+Open nano to make script:
+$ sudo nano /script/mssql_backups.sh
+
+Set in here: 
+=====================================
+{
+
+#sqlcmd path
+sqlcmdpath=/opt/mssql-tools/bin/sqlcmd
+# Backup storage directory
+backupfolder=/backups/sql-server/
+# Notification email address
+recipient_email=*****@gmail.com
+# SQL Server user
+user=sa
+# SQL Server Password password
+password=****password****
+# Number of days to store the backup
+keep_day=30
+bakfile=$backupfolder/mmsql-database-$(date +%d-%m-%Y_%H-%M-%S).bak
+# Create a backup
+$sqlcmdpath -U $user -P $password -Q "BACKUP DATABASE [your_database] TO DISK = '$bakfile.bak' WITH COMPRESSION;"
+if [ $? == 0 ]; then
+  find $backupfolder -mtime +$keep_day -delete
+  echo 'Backup created'
+else
+  echo 'sqlcmd return non-zero code' | mailx -s 'No backup was created!' $recipient_email
+  exit
+fi
+echo $bakfile | mailx -s 'Backup was successfully created' $recipient_email
+
+}
+
+===============================================================
+
+Set execute permission on your script using chmod command :
+$ sudo chmod +x /script/mssql_backups.sh
+
+You can schedule this script to run regularly with crontab:
+$ crontab -e
+
+and add the following line at the end:
+backup creation will start at midnight.
+
+00 00 * * * /home/nama_user/script/mssql_backups.sh
+$ 00 00 * * * /home/mssql/script/mssql_backups.sh
