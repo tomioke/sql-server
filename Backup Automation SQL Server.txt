@@ -1,3 +1,9 @@
+Minimum System Requipments:
+- Ubuntu 20.04
+- CPU 1 Core
+- RAM 2 GB
+- Hardisk 20 GB
+
 Referensi:
 https://www.adminschoice.com/crontab-quick-reference
 https://blog.sqlbak.com/how-to-backup-and-restore-sql-server-on-linux
