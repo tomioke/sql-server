@@ -1,0 +1,18 @@
+-- Pengurutan data nama barang pada tabel barang 
+SELECT id_barang, nama, jumlah, harga, diskon
+FROM tb_barang
+ORDER BY nama DESC;
+
+SELECT id_barang, nama, jumlah, harga, diskon
+FROM tb_barang
+ORDER BY nama;
+
+-- Urutkan nama barang dengan diskon paling besar
+SELECT id_barang, nama, jumlah, harga, diskon
+FROM tb_barang
+ORDER BY diskon DESC, nama ASC;
+
+-- Urutkan nama barang dengan diskon termurah
+SELECT id_barang, nama, jumlah, harga, diskon
+FROM tb_barang
+ORDER BY diskon, nama;
