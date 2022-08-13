@@ -1,0 +1,84 @@
+SELECT * FROM tb_barang 
+
+SELECT 
+	id_barang, 
+	nama, 
+	jumlah, 
+	harga, 
+	diskon 
+FROM tb_barang 
+ORDER BY id_barang 
+OFFSET 0 ROWS 
+FETCH FIRST 3 ROWS ONLY;
+
+-- Pengurutan data barang berdasarkan diskon terbesar (deskending) dan nama barang dari abjad askending
+SELECT
+	id_barang,
+	nama,
+	jumlah,
+	harga,
+	diskon 
+FROM
+	tb_barang 
+ORDER BY
+	diskon DESC,
+	nama ASC;
+	
+	
+-- Penggunaan offset digunakan untuk mengecualikan row, misal :
+-- OFFSET 2 ROWS, maka akan dikecualikan 2 row data teratas
+SELECT
+	id_barang,
+	nama,
+	jumlah,
+	harga,
+	diskon 
+FROM
+	tb_barang 
+ORDER BY
+	diskon DESC,
+	nama ASC 
+OFFSET 2 ROWS;
+	
+-- Limit pencarian 5 barang pertama, diskon desc dan nama asc
+SELECT
+	id_barang,
+	nama,
+	jumlah,
+	harga,
+	diskon 
+FROM
+	tb_barang 
+ORDER BY
+	diskon DESC,
+	nama ASC 
+OFFSET 0 ROWS 
+FETCH FIRST 5 ROWS ONLY;
+
+-- Query offset dan fetch next untuk kecualikan 3 data teratas dan ambil 4 data setelahnya.
+SELECT
+	id_barang,
+	nama,
+	jumlah,
+	harga,
+	diskon 
+FROM tb_barang 
+ORDER BY id_barang
+OFFSET 3 ROWS 
+FETCH NEXT 4 ROWS ONLY;
+
+SELECT 
+	id_barang, 
+	nama, 
+	jumlah, 
+	harga, 
+	diskon 
+FROM tb_barang 
+ORDER BY id_barang; 
+
+-- Untuk selanjutnya agar menghemat waktu baca query maka akan digunakan fungsi:
+SELECT * 
+FROM tb_barang 
+ORDER BY id_barang
+OFFSET 0 ROWS
+FETCH NEXT 5 ROWS ONLY;
