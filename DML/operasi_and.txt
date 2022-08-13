@@ -1,0 +1,22 @@
+-- Operasi AND
+SELECT *
+FROM tb_barang 
+ORDER BY id_barang
+OFFSET 0 ROWS 
+FETCH NEXT 5 ROWS ONLY;
+
+
+SELECT * 
+FROM tb_barang 
+WHERE id_barang = 4 
+AND diskon = 2000;
+
+SELECT * 
+FROM tb_barang 
+WHERE id_barang < 4 
+AND diskon >= 2000;
+
+SELECT * 
+FROM tb_barang 
+WHERE id_barang > 3
+AND diskon < 100000;
