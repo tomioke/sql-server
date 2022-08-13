@@ -1,0 +1,14 @@
+SELECT * 
+FROM tb_barang 
+ORDER BY id_barang
+OFFSET 0 ROWS
+FETCH NEXT 5 ROWS ONLY;
+
+-- Index baris tertentu supaya data menghilangkan data redudance (berulang), alternatif dari penggunaan 'GROUP BY'.
+SELECT DISTINCT
+ nama,
+ jumlah,
+ diskon
+FROM tb_barang
+ORDER BY 
+ diskon DESC;
