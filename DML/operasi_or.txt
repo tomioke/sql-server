@@ -1,0 +1,16 @@
+SELECT * 
+FROM tb_barang 
+ORDER BY id_barang
+OFFSET 0 ROWS
+FETCH NEXT 5 ROWS ONLY;
+
+-- Logika operasi OR
+SELECT 'Benar' AS hasil 
+WHERE 1=0 OR 0=1
+
+SELECT 
+  nama,
+	jumlah,
+	harga
+FROM tb_barang
+WHERE id_barang = 4 OR jumlah = 20
