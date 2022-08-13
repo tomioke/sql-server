@@ -1,0 +1,50 @@
+SELECT * 
+FROM tb_barang;
+
+SELECT
+	id_barang,
+	nama,
+	jumlah,
+	harga,
+	diskon
+FROM tb_barang
+ORDER BY id_barang
+OFFSET 0 ROWS
+FETCH NEXT 5 ROWS ONLY;
+
+-- Alternatif untuk limit dengan query pendek
+SELECT TOP 3
+	id_barang,
+	nama,
+	jumlah,
+	harga,
+	diskon
+FROM tb_barang;
+
+-- Ambil data dengan jumlah 50% atau setengah data saja
+SELECT TOP 50 PERCENT
+	id_barang,
+	nama,
+	jumlah,
+	harga,
+	diskon
+FROM tb_barang;
+
+-- cari data dengan limit nilai diskon dengan nilai yang sama
+SELECT TOP 5 WITH TIES
+	id_barang,
+	nama,
+	jumlah,
+	harga,
+	diskon
+FROM tb_barang
+ORDER BY diskon;
+
+SELECT TOP 8 WITH TIES
+	id_barang,
+	nama,
+	jumlah,
+	harga,
+	diskon
+FROM tb_barang
+ORDER BY diskon DESC;
