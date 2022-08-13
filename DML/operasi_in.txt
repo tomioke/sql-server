@@ -1,0 +1,31 @@
+SELECT *
+FROM tb_barang 
+ORDER BY id_barang
+OFFSET 0 ROWS 
+FETCH NEXT 5 ROWS ONLY;
+
+-- Penggunaan IN untuk mencari jumlah barang 15 dan 20
+SELECT *
+FROM tb_barang 
+WHERE jumlah 
+IN(15,20);
+
+-- Operasi IN dapat digunakan untuk mencari data dari lain tabel dengan relasi. Misal cari kategory pakaian dari tabel barang.
+SELECT *
+FROM tb_barang 
+WHERE category_id
+IN(SELECT category_id FROM tb_category WHERE nama_category = 'pakaian');
+
+SELECT nama, jumlah, harga, diskon
+FROM tb_barang 
+WHERE category_id
+IN(SELECT category_id FROM tb_category WHERE nama_category = 'pakaian');
+
+-- Limit 5 data saja
+SELECT nama, jumlah, harga, diskon
+FROM tb_barang 
+WHERE category_id
+IN(SELECT category_id FROM tb_category WHERE nama_category = 'pakaian')
+ORDER BY id_barang
+OFFSET 0 ROWS 
+FETCH NEXT 5 ROWS ONLY;
