@@ -1,0 +1,43 @@
+SELECT * 
+FROM
+	tb_barang 
+ORDER BY
+	id_barang
+OFFSET 0 ROWS 
+FETCH NEXT 5 ROWS ONLY;
+
+-- Tampilkan data dengan kolom jumlah null atau tidak ada data (nothing).
+SELECT nama, jumlah, harga
+FROM
+	tb_barang
+WHERE jumlah IS NULL;
+
+-- Tampilkan data dengan kolom jumlah yang tidak null atau tidak ada data (nothing).
+SELECT nama, jumlah, harga
+FROM
+	tb_barang
+WHERE jumlah IS NOT NULL;
+
+-- Menampilkan data null dengan angka
+SELECT 
+	nama, 
+	jumlah, 
+	harga, 
+	diskon, 
+	ISNULL(jumlah, 0) as lihat_null
+FROM tb_barang;
+
+-- Cari hanya field yang berisi null dan diubah ke dalam bentuk angka.
+SELECT 
+	nama, 
+	jumlah, 
+	harga, 
+	diskon, 
+	ISNULL(jumlah, 0) AS null_to_number
+FROM tb_barang
+WHERE jumlah IS NULL;
+
+SELECT * 
+FROM tb_barang 
+WHERE id_barang = 4 
+AND diskon = 2000;
